@@ -1,9 +1,14 @@
 import React, { useState,useEffect } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
+  // const [id, setid]=useState('');
   const [rfid, setRFID] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // this helps in submiting to dashboard
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -22,19 +27,40 @@ const Login = () => {
 
   const sendLogin = async () => {
 
-    const credential = {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
+    // const credential = {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({
+    //     Id:'',
+    //     rfid: rfid,
+    //     password: password,
+    //   })
+
+    // }
+    // await (await fetch("https://localhost:44367/api/crudoperations/Login",credential)).json();
+
+    try {
+      const response = await axios.post('https://localhost:44367/api/crudoperations/Login', {
+        id:'',
         rfid: rfid,
-        password: password
-      })
-
+        password: password,
+      });
+  
+      if (response.data.isSuccess) {
+        // Login successful
+        console.log('Login successful', response.data); // Handle successful login here
+        navigate('/dashboard');
+      } else {
+        // Login failed
+        console.error('Login failed', response.data); // Handle failed login here
+        setError('Login failed. Please check your credentials.');
+      }
+    } catch (error) {
+      console.error('Login error:', error.message);
+      setError('An error occurred during login');
     }
-
-    await (await fetch("http://127.0.0.1:4437/api/crudoperations/Login_Details",credential)).json();
   }
   
   useEffect(() => {
