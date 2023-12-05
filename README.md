@@ -1,3 +1,24 @@
+# changes :
+
+1) did changes in login.js and regstration.js so they don't route to dashboard even if login or registeration is failed
+2) made backend only accept unique numeric rfids
+3) created logic for password checking in login here : https://github.com/vivekmaru36/Crud_operations_with_web_api/blob/master/Crud_app_with_mongo/Data_access_layer/CrudOperationsDL.cs 
+
+# Instructions : 
+
+1) npm install
+2) npm install --save-dev @babel/plugin-proposal-private-property-in-object
+3) npm install axios
+4) npm start 
+
+to go to dashboard just use http://localhost:3000/dashboard
+
+if you want to go there using backend use this on your pc and run it simulatenously 
+
+--> https://github.com/vivekmaru36/Crud_operations_with_web_api
+--> https://www.youtube.com/playlist?list=PLwxiRZdZ4bZkldxU51cwo5B1xuN9hxvCM
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
