@@ -9,7 +9,9 @@
 .dashboard-container {
   display: flex;
   height: 100vh;
-  background-color: #ffffff; /* White background */
+  /* background-color: #ffffff; White background */
+  background-color: #131417; /* black background */
+  
 }
 
 /* .nav {
@@ -17,9 +19,9 @@
   } */
 
 /* nav hiding code base in current url*/
-.navbar.hide-navbar {
+/* .navbar.hide-navbar {
   display: none;
-}
+} */
 
 .menu-button {
   position: absolute; /* Position the menu button */
