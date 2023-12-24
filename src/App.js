@@ -6,17 +6,19 @@ import Signup from './Signup';
 import Login from './Login';
 import Registration from './Registration';
 import Navbar from './Navbar';
-import './App.css';
-
 import Dashboard from './Dashboard/Dashboard';
-import './Dashboard/Dashboard.css'; 
 
+import './App.css';
+import './Navbar.css';
+import './Dashboard/Dashboard.css';
 
 const App = () => {
+  const currentPath = window.location.pathname;
+
   return (
     <Router>
       <div>
-        <Navbar />
+        {currentPath !== '/dashboard' && <Navbar />} {/* Hide navbar on dashboard */}
         <div className="container">
           <Routes>
             <Route path="/" element={<Home />} />
