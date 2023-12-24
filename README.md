@@ -2,7 +2,8 @@
 
 1) did changes in login.js and regstration.js so they don't route to dashboard even if login or registeration is failed
 2) made backend only accept unique numeric rfids
-3) created logic for password checking in login here : https://github.com/vivekmaru36/Crud_operations_with_web_api/blob/master/Crud_app_with_mongo/Data_access_layer/CrudOperationsDL.cs 
+3) created logic for password checking in login here : https://github.com/vivekmaru36/Crud_operations_with_web_api/blob/master/Crud_app_with_mongo/Data_access_layer/CrudOperationsDL.cs
+4) added suraj's dashboard's menu bar and no css was changed done it using 'Switch' inside app.js where navbar only displays on other pages except on dashboard
 
 # Instructions : 
 
